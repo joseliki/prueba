@@ -1,4 +1,5 @@
 from bottle import route, default_app, run
+from funciones import cuadrado
 
 @route('/name/<name>')
 def nameindex(name='Stranger'):
@@ -6,7 +7,7 @@ def nameindex(name='Stranger'):
  
 @route('/')
 def index():
-    return '<strong>Hello World!</strong>'
+    return '<strong>Hello %d</strong>' % cuadrado(3)
 
 # This must be added in order to do correct path lookups for the views
 import os
